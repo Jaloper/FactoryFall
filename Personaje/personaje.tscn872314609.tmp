@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://ctwnyuuwr4n3w"]
+
+[ext_resource type="Script" uid="uid://cdvgmmy1bhwgm" path="res://personaje/personaje.gd" id="1_diry1"]
+[ext_resource type="Texture2D" uid="uid://jx2tviofesfd" path="res://personaje/Sprite_Robot.png" id="2_diry1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8xir"]
+size = Vector2(41.238434, 94.580345)
+
+[sub_resource type="Animation" id="Animation_i8xir"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_fc0wv"]
+resource_name = "Walk"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.16666663, 1.2333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [3, 2]
+}
+
+[sub_resource type="Animation" id="Animation_diry1"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jnov3"]
+_data = {
+&"RESET": SubResource("Animation_i8xir"),
+&"Walk": SubResource("Animation_fc0wv"),
+&"idle": SubResource("Animation_diry1")
+}
+
+[node name="Personaje" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_diry1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.539, 0.502)
+texture = ExtResource("2_diry1")
+hframes = 4
+vframes = 3
+region_enabled = true
+region_rect = Rect2(16, 32, 460, 400.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.9999995, 1.9999995)
+rotation = 0.013780445
+scale = Vector2(0.9217171, 0.6446017)
+shape = SubResource("RectangleShape2D_i8xir")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_jnov3")
+}

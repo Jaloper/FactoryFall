@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://gn83nnv4tr4e"]
+
+[ext_resource type="Texture2D" uid="uid://b1k20ykhhnmex" path="res://assets/PNG/suelo_top.png" id="1_g1js0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bunt"]
+size = Vector2(249.37732, 7.4019766)
+
+[node name="Top" type="StaticBody2D"]
+
+[node name="Suelo" type="Sprite2D" parent="."]
+scale = Vector2(0.32228118, 0.22222224)
+texture = ExtResource("1_g1js0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.32435, -6)
+scale = Vector2(0.9890584, 0.8105944)
+shape = SubResource("RectangleShape2D_3bunt")
+one_way_collision = true

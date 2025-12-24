@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bo1go553v221h"]
+
+[ext_resource type="Script" uid="uid://c5ic57m6sl3vr" path="res://Enemigos/barril.gd" id="1_gsv7i"]
+[ext_resource type="Texture2D" uid="uid://bpbhfendrse2y" path="res://assets/PNG/barril.png" id="1_u35fk"]
+[ext_resource type="AudioStream" uid="uid://ymhmd56rpqk0" path="res://Musica_Sonidos/Sonidos/car-crash-sound-376882.mp3" id="3_eajbm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gsv7i"]
+radius = 40.112343
+
+[node name="barril" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 7
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_gsv7i")
+
+[node name="Barril" type="Sprite2D" parent="."]
+scale = Vector2(0.046, 0.044)
+texture = ExtResource("1_u35fk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(0.402, 0.386)
+shape = SubResource("CircleShape2D_gsv7i")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_eajbm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

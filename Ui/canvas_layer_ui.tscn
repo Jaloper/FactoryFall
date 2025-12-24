@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://cawofxm1wdvnf"]
+
+[ext_resource type="Script" uid="uid://cnwm4vsupqhv8" path="res://Ui/canvas_layer_ui.gd" id="1_0nig0"]
+[ext_resource type="Texture2D" uid="uid://d3vk4mogpb62" path="res://assets/PNG/back.png" id="1_a7ax0"]
+[ext_resource type="Texture2D" uid="uid://cyq6wpjx85uvk" path="res://assets/PNG/corazon_lleno.png" id="3_el6d0"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_0nig0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -174.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 367.0
+grow_horizontal = 0
+scale = Vector2(0.41322294, 0.21933264)
+texture = ExtResource("1_a7ax0")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.21991
+offset_top = -47.78076
+offset_right = 2.7800903
+offset_bottom = -24.780762
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.736104, 4.879483)
+theme_override_colors/font_color = Color(0.06053035, 0.06053035, 0.060530342, 1)
+text = "100"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -96.0
+offset_top = 80.0
+offset_right = 1448.0
+offset_bottom = 592.0
+grow_horizontal = 0
+scale = Vector2(0.040858388, 0.037717976)
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_el6d0")
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_el6d0")
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_el6d0")
